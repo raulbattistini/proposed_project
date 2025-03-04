@@ -1,0 +1,33 @@
+{
+  "name": "back",
+  "version": "1.0.0",
+  "description": "sample api programmed to support login functionalities / math functions  ",
+  "main": "index.js",
+  "repository": "https://github.com/raulbattistini/teste-vaga-desenvolvimento-three",
+  "author": "Raul Battistini ",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "date-fns": "^4.1.0",
+    "decimal.js": "^10.4.3",
+    "express": "^4.21.2",
+    "nodemon": "^3.1.9",
+    "pino-http": "^10.4.0",
+    "ts-node": "^10.9.2",
+    "uuid": "^11.0.5",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.7",
+    "@types/uuid": "^10.0.0",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.7.3"
+  },
+  "scripts": {
+    "dev": "tsnd --transpile-only --respawn ./src/index.ts --ignore-watch node_modules",
+    "start:dev": "tsc && node dist/index.js",
+    "start": "node dist/src/index.js",
+    "build": "tsc"
+  }
+}

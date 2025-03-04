@@ -1,0 +1,3 @@
+const DEFAULT_STATUS_CODE = 500;
+
+export { DEFAULT_STATUS_CODE };
