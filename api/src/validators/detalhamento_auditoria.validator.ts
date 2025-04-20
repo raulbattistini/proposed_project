@@ -3,25 +3,29 @@ import DetalhamentoAuditoriaSchema from "../utils/schemas/detalhamento_auditoria
 import ZodErrorStatusEnum from "../enums/errors_enums/errors_status.enum";
 import { Either, left, right } from "../globals/errors/left_right_either.error";
 import { BaseAppError } from "../errors/global_error.error";
+import BaseValidator from "./base.validator";
 
 class DetalhamentoAuditoriaValidator
-    implements IDetalhamentoAuditoriaValidator
+   extends BaseValidator
+   implements IDetalhamentoAuditoriaValidator
 {
-    constructor() {}
-    validatePayload(payload: unknown): Either<BaseAppError, void> {
-        const result = DetalhamentoAuditoriaSchema.safeParse(payload);
-        if (!result.success) {
-            return left(
-                new BaseAppError(
-                    "400",
-                    ZodErrorStatusEnum.Values.error,
-                    false,
-                    result.error.errors.map((err) => err.message).join(", ")
-                )
-            );
-        }
-        return right(undefined);
-    }
+   constructor() {
+      super();
+   }
+   validatePayload(payload: unknown): Either<BaseAppError, void> {
+      const result = DetalhamentoAuditoriaSchema.safeParse(payload);
+      if (!result.success) {
+         return left(
+            new BaseAppError(
+               "400",
+               ZodErrorStatusEnum.Values.error,
+               false,
+               result.error.errors.map((err) => err.message).join(", "),
+            ),
+         );
+      }
+      return right(undefined);
+   }
 }
 
 export default DetalhamentoAuditoriaValidator;
