@@ -1,21 +1,10 @@
 const SERVER_ERRORS_STATUS_CODES = ["500", "501", "503", "504"] as const 
-// Array.from(
-//     { length: 100 },
-//     (_, i) => String(i + 500)
-// );
-const CLIENT_ERRORS_STATUS_CODES = Array.from(
-    { length: 100 },
-    (_, i) => i + 400
-);
-const REDIRECT_MESSAGE_STATUS_CODES = Array.from(
-    { length: 100 },
-    (_, i) => i + 300
-);
-const SUCCESS_MESSAGE_STATUS_CODES = Array.from(
-    { length: 100 },
-    (_, i) => i + 200
-);
-// const INFORMATIONAL_MESSAGE_STATUS_CODES = Array.from({length: 100}, (_, i) => i + 100);
+
+const CLIENT_ERRORS_STATUS_CODES = ["400", "401", "402", "403", "409", "422", "429"] as const;
+
+const SUCCESS_MESSAGE_STATUS_CODES = ["200", "201", "202", "204"] as const;
+
+const REDIRECT_MESSAGE_STATUS_CODES = ["300", "301", "302"] as const; 
 
 export {
     SERVER_ERRORS_STATUS_CODES,
