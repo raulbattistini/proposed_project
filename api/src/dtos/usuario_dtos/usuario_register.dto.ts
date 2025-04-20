@@ -1,9 +1,6 @@
 import { UsuarioEntity } from "../../entities/usuario.entity";
 
-type PayloadRegisterUsuarioDto = Pick<
-    UsuarioEntity,
-    "nome" | "senha" | "email"
->;
+type PayloadRegisterUsuarioDto = Pick<UsuarioEntity, "nome" | "email">;
 
 type ResponseRegisterUsuarioDto = Omit<UsuarioEntity, "auditorias_realizadas">;
 

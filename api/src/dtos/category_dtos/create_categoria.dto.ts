@@ -3,6 +3,6 @@ import Categoria from "../../entities/categoria.entity";
 
 type PayloadCreateCategoria = Omit<Categoria, "id">;
 
-type ResponseCreateCategoria = BaseDefaultMessage & Categoria;
+type ResponseCreateCategoria = Categoria;
 
 export { PayloadCreateCategoria, ResponseCreateCategoria };

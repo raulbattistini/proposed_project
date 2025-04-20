@@ -1,8 +1,4 @@
-import {
-    BaseDefaultMessage,
-    BaseMessageGetOne,
-    BaseMessageGet,
-} from "../global_get.dto";
+import { BaseMessageGetOne, BaseMessageGet } from "../global_get.dto";
 import { UsuarioEntity } from "../../entities/usuario.entity";
 
 type ResponseGetUsuariosDto = BaseMessageGet<UsuarioEntity>;

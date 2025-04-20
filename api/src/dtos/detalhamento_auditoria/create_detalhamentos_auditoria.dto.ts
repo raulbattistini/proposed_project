@@ -1,15 +1,13 @@
 import { DetalhamentoAuditoriaEntity } from "../../entities/detalhamento_auditoria.entity";
-import { BaseDefaultMessage } from "../global_get.dto";
 
 type PayloadCreateDetalhamentoAuditoriaDto = Omit<
-    DetalhamentoAuditoriaEntity,
-    "id"
+   DetalhamentoAuditoriaEntity,
+   "id"
 >;
 
-type ResponseCreateDetalhamentoAuditoriaDto = BaseDefaultMessage &
-    DetalhamentoAuditoriaEntity;
+type ResponseCreateDetalhamentoAuditoriaDto = DetalhamentoAuditoriaEntity;
 
 export {
-    PayloadCreateDetalhamentoAuditoriaDto,
-    ResponseCreateDetalhamentoAuditoriaDto,
+   PayloadCreateDetalhamentoAuditoriaDto,
+   ResponseCreateDetalhamentoAuditoriaDto,
 };

@@ -3,9 +3,9 @@ import { ProductEntity } from "../../entities/product.entity";
 import { BaseMessageGet, BaseMessageGetOne } from "../global_get.dto";
 
 interface MessageGetUniqueProduct<T> extends BaseMessageGetOne<T> {
-    message: string;
-    status: boolean;
-    data: T;
+   message: string;
+   status: boolean;
+   data: T;
 }
 
 type ResponseGetProductDto = BaseMessageGetOne<ProductEntity>;
@@ -13,24 +13,22 @@ type ResponseGetProductDto = BaseMessageGetOne<ProductEntity>;
 type ResponseGetProductsDto = BaseMessageGet<ProductEntity>;
 
 type FindFilteredProductsPayloadDto = Partial<
-    Omit<ProductEntity, "categoria" & { categoria: Pick<Categoria, "nome"> }>
+   Omit<ProductEntity, "categoria" & { categoria: Pick<Categoria, "nome"> }>
 >;
 
 type ResponseFindFilteredProductsDto = BaseMessageGet<
-    Omit<ProductEntity, "id">
+   Omit<ProductEntity, "id">
 >;
 
-interface ResponseFindProductsToDownloadDto<
-    ProductEntity,
-    T extends number | number[],
-> extends BaseMessageGet<ProductEntity> {
-    aggregated_value: T;
+interface ResponseFindProductsToDownloadDto<ProductEntity>
+   extends BaseMessageGet<ProductEntity> {
+   aggregated_value: Map<Categoria, number>;
 }
 
 export {
-    ResponseGetProductsDto,
-    ResponseGetProductDto,
-    FindFilteredProductsPayloadDto,
-    ResponseFindFilteredProductsDto,
-    ResponseFindProductsToDownloadDto,
+   ResponseGetProductsDto,
+   ResponseGetProductDto,
+   FindFilteredProductsPayloadDto,
+   ResponseFindFilteredProductsDto,
+   ResponseFindProductsToDownloadDto,
 };

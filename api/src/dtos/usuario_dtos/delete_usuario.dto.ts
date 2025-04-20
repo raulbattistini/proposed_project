@@ -1,6 +1,8 @@
 import { UsuarioEntity } from "../../entities/usuario.entity";
-import { BaseDefaultMessage } from "../global_get.dto";
 
-type ResponseArchiveUsuario = BaseDefaultMessage & Omit<UsuarioEntity, "id">;
+type ResponseArchiveUsuario = Omit<
+   UsuarioEntity,
+   "id" | "auditorias_realizadas"
+>;
 
 export { ResponseArchiveUsuario };
