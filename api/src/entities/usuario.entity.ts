@@ -4,29 +4,29 @@ import { AuditoriaEntity } from "./auditoria.entity";
 
 @Entity("usuarios")
 class UsuarioEntity {
-    @PrimaryGeneratedColumn("uuid")
-    id: string;
+   @PrimaryGeneratedColumn("uuid")
+   id: string;
 
-    @Column("text")
-    nome: string;
+   @Column("text")
+   nome: string;
 
-    @Column("text")
-    permissoes: PermissoesUsuarioEnum;
+   @Column("text")
+   permissoes: PermissoesUsuarioEnum;
 
-    @Column("text", { nullable: false })
-    email: string;
+   @Column("text", { nullable: false })
+   email: string;
 
-    @Column("text")
-    senha: string;
+   @Column("text")
+   private senha: string;
 
-    @Column()
-    ativo: boolean;
+   @Column()
+   ativo: boolean;
 
-    @OneToOne(
-        () => AuditoriaEntity,
-        (auditoriaEntity) => auditoriaEntity.nome_do_auditor
-    )
-    auditorias_realizadas: AuditoriaEntity;
+   @OneToOne(
+      () => AuditoriaEntity,
+      (auditoriaEntity) => auditoriaEntity.nome_do_auditor,
+   )
+   auditorias_realizadas: AuditoriaEntity;
 }
 
 export { UsuarioEntity };
