@@ -21,7 +21,6 @@ class ServerError extends BaseAppError {
         this.isOperational = isOperational;
 
         Object.setPrototypeOf(this, new.target.prototype);
-        Error.captureStackTrace(this);
     }
 }
 
