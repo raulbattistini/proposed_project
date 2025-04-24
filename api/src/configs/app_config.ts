@@ -13,8 +13,8 @@ export type AppConfig = {
 };
 
 class Config {
-   private static instance: Config;
    private appConfig: AppConfig;
+   private static instance: Config;
    private static connection: DataSource | null = null;
    constructor() {
       this.appConfig = {

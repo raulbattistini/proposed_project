@@ -6,7 +6,6 @@ import {
    right,
 } from "../../globals/errors/left_right_either.error";
 
-// signature: accepts an array(list) of T and K keyof T, where T is an object extending typeorm default generic entity manager and K is a property of the given entity as arguments which type is a number and returning either an error or the sumup of the values present in the array of T
 export default function aggregateValue<T, V = number>(
    array: T[],
    propExtractor: (item: T) => V,
